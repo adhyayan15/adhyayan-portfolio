@@ -1,41 +1,33 @@
-# Adhyayan Tiwari — Engineering, Curiosity & People
+# Adhyayan Tiwari — Personal Portfolio
 
-A cinematic, story-driven engineering portfolio built with Next.js, React, and TypeScript. Built to document real engineering projects, ongoing research, and the human stories behind the work.
+A dark, editorial, mobile-responsive engineering portfolio built with Next.js, React and TypeScript. It combines engineering case studies with stories about research, mentoring, leadership, writing and the person behind the work.
 
-## Local setup
+## Run locally
 
-Requires Node.js 20.9+.
+Requires Node.js 20.9+ (Node 22 recommended).
 
 ```bash
 npm install
 npm run dev
+# open http://localhost:3000
+npm run build
 ```
 
-Open http://localhost:3000. Validate with `npm run build`.
+## Organization
 
-## Site structure
+- `src/app/page.tsx` — homepage; Story → Impact → Education → Projects → Experience → Leadership → Beyond Engineering → Book → Contact
+- `src/app/work/[slug]/page.tsx` — four detailed case studies with contextual demos
+- `src/app/story`, `/experience`, `/research`, `/writing`, `/contact` — optional deeper pages
+- `src/data/projects.ts` and `src/data/journey.ts` — structured project and experience information
+- `src/app/globals.css` — foundation styles; `src/app/polish.css` — responsive and legibility improvements
+- `public/images` — the owner's approved photography and SASE event images
 
-The homepage follows these chapters: **Story → Impact → Education → Projects → Professional Experience → Leadership → Beyond Engineering → First Book → Contact**. The navbar links to the homepage sections, while detailed pages are available at `/work`, `/work/[slug]`, `/story`, `/research`, `/experience`, `/writing`, and `/contact`.
-
-`src/data/projects.ts` stores verified case-study material, actual project-source links, and metrics. `src/data/journey.ts` stores experience and education context. `src/app/page.tsx` controls the homepage and `src/app/globals.css` contains the visual system.
-
-## Media and attribution
-
-The author has supplied original photographs of himself and USF student workshops / events. These are stored as optimized WebP files under `public/images/`. Please don't repurpose the personal or student photos without permission.
-
-Project case-study screenshots and figures are displayed from the corresponding public engineering GitHub repositories. The NanaBot robot graphic is a *conceptual illustration*, not a hardware photograph. The book graphic is a typographic tribute, not an original cover scan.
-
-## Engineering accuracy
-
-- Reflex Vision shows recorded, device-specific benchmark results, not browser GPU benchmarks or universal acceleration claims.
-- Orion-1 is an unvalidated, design-stage PCB prototype.
-- The Four-Worker Scheduler is RTL simulation, not an FPGA implementation.
-- The BCD Counter breadboard has been tested; the PCB is a completed design, not an assembled hardware validation.
-- NanaBot is ongoing research, not a finished or medically validated product.
-- Interactive diagrams on individual project pages are educational browser illustrations, not live RTL/physical execution.
+The interactive project demos are browser illustrations and previously documented measurements, **not** live FPGA or TensorRT execution. Hardware designs are explicitly distinguished from physically tested builds.
 
 ## Deployment
 
-Import `adhyayan15/adhyayan-portfolio` into Vercel, choose Next.js, leave Root Directory at the repository root, and deploy. Pushing further commits to `main` updates the deployment. The GitHub Actions workflow verifies the production build on each push.
+Connect this GitHub repository to Vercel and deploy as a Next.js app from the repository root. New pushes to `main` trigger deployments when the Git integration is enabled. No environment variables are required.
 
-The resume button opens a blank, view-only public Google Doc provided by the author; he can add his approved resume there later without updating the website.
+## Assets and privacy
+
+The photographs are personal images provided by the portfolio owner; please do not reuse them without permission. The résumé button points to the owner's Google Doc configured for public view-only access. The current document is intentionally blank until the owner adds the finished résumé.

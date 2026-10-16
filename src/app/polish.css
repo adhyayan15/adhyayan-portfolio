@@ -1,0 +1,183 @@
+/* Portfolio finishing pass: photographic framing, accessible type, and mobile-first polish.
+   Kept separate from the original exploratory styles for maintainability. */
+:root{--muted:#c5c8c2;--edge:rgba(237,236,226,.17)}
+body{font-size:16px;line-height:1.65}
+img{display:block;height:auto}
+a,button{-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid #e1bd91;outline-offset:4px}
+.v3-main{overflow:clip}
+.container{width:min(1360px,calc(100% - 100px))}
+/* Readable metadata and actionable controls */
+.eyebrow,.chapter-index,.hero-bottom,.v3-intro-tag,.v3-project-meta,
+.v3-experience-when,.v3-leader-card>span,.v3-contact-prelude,
+.v3-book-cover small,.v3-extra-line>span,.tags span,
+.v3-education-stats span{font-size:clamp(12px,.9vw,14px);line-height:1.6;letter-spacing:.025em}
+.v3-main p,.editorial-copy p{color:#c7cbc7}
+.v3-main .section{padding-top:110px;padding-bottom:116px}
+.v3-main .section p{font-size:clamp(16px,1.13vw,18px);line-height:1.75}
+.v3-main .v3-section-lead{font-size:clamp(17px,1.25vw,20px);max-width:830px}
+.v3-section-head h2{font-size:clamp(43px,5.1vw,74px);max-width:1040px;text-wrap:balance}
+.v3-main h3{text-wrap:balance}
+.button-primary,.button-text,.button-outline,.inline-link{font-size:12px;line-height:1.45;letter-spacing:.035em}
+.button-primary,.button-outline{min-height:48px;align-items:center}
+.nav-v3 .nav-links a{font-size:12px;letter-spacing:.025em}
+.nav-v3 .nav-inner{width:min(1440px,calc(100% - 70px))}
+.nav-v3 .v3-nav-socials>a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:2px}
+.menu-button{min-height:44px;min-width:66px;font-size:12px}
+.hero-bottom{font-size:11px;color:#a9b3ad}
+/* Hero portrait prepared as an intentional 4:5 crop so object-fit no longer discards half the image. */
+.v3-hero{min-height:clamp(640px,85svh,900px)}
+.v3-hero .hero-grid{grid-template-columns:minmax(0,1.08fr) minmax(340px,.78fr);gap:clamp(32px,5.5vw,95px)}
+.v3-hero h1{font-size:clamp(53px,5.5vw,86px);line-height:1.08;letter-spacing:-.067em}
+.v3-hero .hero-deck{max-width:620px;font-size:clamp(17px,1.17vw,19px);line-height:1.8}
+.v3-hero .hero-photo-frame{aspect-ratio:39 / 50;min-height:0;height:auto;max-height:635px;max-width:500px;margin-left:auto;filter:saturate(.9)}
+.v3-hero .hero-photo{width:100%;height:100%;object-fit:cover;object-position:center center}
+.v3-hero .hero-photo-shade{background:linear-gradient(0deg,rgba(8,12,13,.33),transparent 35%)}
+/* Genuine photo galleries: no cropping of people's faces or event flyers. */
+.v3-impact-feature{grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,76px)}
+.v3-impact-main-photo img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center 44%}
+.v3-gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:26px}
+.v3-gallery img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:50% 35%;filter:saturate(.94)}
+.v3-gallery figcaption,.v3-wide-photo figcaption,.v3-impact-main-photo figcaption{font-size:14px;line-height:1.5;margin-top:12px}
+.v3-impact-stories{margin-top:95px;grid-template-columns:1fr;gap:26px}
+.v3-story-card,.v3-story-card-wide{grid-template-columns:minmax(0,410px) minmax(0,1fr);min-height:0}
+.v3-story-card-photo{display:flex;align-items:center;justify-content:center;min-height:450px;background:#11191a;overflow:hidden}
+.v3-story-card-poster{aspect-ratio:4/5;min-height:0}
+.v3-story-card-poster img{width:100%;height:100%;max-height:none;object-fit:contain;object-position:center;background:#131b1b;filter:none}
+.v3-story-card-copy{padding:clamp(30px,4vw,60px);align-self:center}
+.v3-story-card-copy h3{font-size:clamp(32px,3.35vw,48px)}
+.v3-story-card-copy p{max-width:710px}
+.v3-story-card-wide{grid-column:auto}
+.v3-story-card-wide .v3-story-card-photo{min-height:350px}
+.v3-story-card-wide .v3-story-card-copy{padding:clamp(30px,4vw,60px)}
+.v3-impact .v3-intro-tag{font-size:12px}
+.v3-highlight{font-size:14px}
+.v3-nanabot-art>span{font-size:13px}
+.v3-education-grid{align-items:start}
+.v3-education-panel li strong{font-size:17px}
+.v3-education-panel li small{font-size:14px}
+.v3-education-panel .v3-muted-note{font-size:14px}
+/* Projects stay compact until requested; keyboard focus and touch expansion work. */
+.v3-project-card .project-image{display:block;height:320px;overflow:hidden}
+.v3-project-card .project-image>img{object-fit:contain;height:100%;width:100%;padding:22px}
+.v3-project-card .project-details>p{font-size:17px;min-height:0}
+.v3-project-meta{font-size:12px}
+.v3-project-extra{max-height:0;opacity:0;overflow:hidden;transition:max-height .35s ease,opacity .24s ease}
+.v3-project-card:hover .v3-project-extra,.v3-project-card:focus-within .v3-project-extra,.v3-project-card.v3-expanded .v3-project-extra{max-height:700px;opacity:1}
+.v3-extra-line>span{font-size:12px}
+.v3-project-extra .v3-extra-line p{font-size:16px;margin:7px 0 0}
+.v3-project-card .tags span{font-size:12px;padding:8px 11px}
+.v3-card-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:24px}
+.v3-expand-button{border:1px solid #65716c;background:transparent;color:#f2dfc2;padding:12px 14px;min-height:44px;font:12px 'IBM Plex Mono',monospace;cursor:pointer;transition:background .2s,border-color .2s}
+.v3-expand-button:hover{background:#252e2a;border-color:var(--copper)}
+.v3-project-image-hint{font-size:12px}
+.v3-project-disclaimer{font-size:14px!important}
+/* Reduce empty date columns and preserve readable timelines. */
+.v3-experience-row{grid-template-columns:190px minmax(0,1fr);gap:clamp(28px,5vw,75px)}
+.v3-experience-row h3{font-size:clamp(29px,3vw,41px);overflow-wrap:anywhere}
+.v3-experience-row ul,.v3-leader-card ul{font-size:16px;line-height:1.7}
+.v3-experience-row li,.v3-leader-card li{margin-bottom:8px}
+.v3-organization,.v3-leader-card>strong{font-size:15px}
+.v3-wide-photo{max-width:1050px;margin:65px auto 0}
+.v3-wide-photo img{width:100%;height:auto;max-height:none;aspect-ratio:4/3;object-fit:contain;object-position:center;filter:saturate(.9)}
+/* Personal portrait: show face, outfit, and setting rather than a tight center-crop. */
+.v3-beyond-photo{max-width:505px}
+.v3-beyond-photo img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:50% 35%;filter:saturate(.95)}
+.v3-book-cover small{font-size:12px}
+.v3-contact-social a{font-size:16px;overflow-wrap:anywhere}
+/* Legacy inner pages are included in the responsive type pass. */
+.page-hero p,.story-intro p,.timeline p,.story-three p,.research-detail p,.research-promise p,.writing-section p,.case-evidence p,.experience-card p{font-size:clamp(16px,1.14vw,18px);line-height:1.75}
+.page-hero .eyebrow,.timeline-when,.case-topline,.honor-row p,.case-gallery figcaption{font-size:12px}
+.story-photo img{object-fit:cover;object-position:50% 28%}
+.v3-story-detail-photo img{height:auto;max-height:none;aspect-ratio:3/4;object-fit:contain;object-position:center}
+/* Shared media frames should never force posters or schematic images to cover/crop. */
+.case-gallery img{height:auto;max-height:520px;object-fit:contain}
+/* Breakpoint before desktop nav runs out of space. */
+@media(max-width:1100px){
+ .v3-nav-links{position:fixed!important;top:76px!important;left:0!important;right:0!important;display:none!important;flex-direction:column;align-items:stretch;gap:0!important;padding:12px 26px 28px!important;background:#0b0f10!important;border-bottom:1px solid #454d49;box-shadow:0 22px 35px #000b;max-height:calc(100dvh - 76px);overflow-y:auto;z-index:90}
+ .v3-nav-links.nav-open{display:flex!important}
+ .nav-v3 .nav-links a{font-size:16px!important;min-height:48px;padding:13px 8px!important;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,.08)}
+ .nav-v3 .menu-button{display:block}
+ .v3-nav-right{gap:14px}
+ .v3-hero .hero-grid{grid-template-columns:minmax(0,1fr) minmax(290px,.78fr);gap:36px}
+ .v3-hero h1{font-size:clamp(48px,5.6vw,67px)}
+}
+@media(max-width:800px){
+ .container{width:calc(100% - 48px)}
+ .v3-hero{min-height:0;padding-top:40px}
+ .v3-hero .hero-grid{grid-template-columns:minmax(0,1fr);gap:26px}
+ .v3-hero h1{font-size:clamp(43px,8vw,68px);white-space:normal}
+ .v3-hero .hero-deck{max-width:650px}
+ .v3-hero .hero-visual{min-height:0}
+ .v3-hero .hero-photo-frame{height:auto;min-height:0;max-height:none;max-width:520px;margin-left:0;aspect-ratio:39/50}
+ .v3-impact-feature,.v3-story-grid,.v3-nanabot,.v3-education-grid,.v3-beyond-grid,.v3-book-grid{grid-template-columns:minmax(0,1fr);gap:34px}
+ .v3-impact-stories{grid-template-columns:1fr}
+ .v3-story-card,.v3-story-card-wide{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .v3-story-card-photo{min-height:350px}
+ .v3-story-card-poster img{max-height:500px}
+ .v3-impact-main-photo img{height:auto;aspect-ratio:4/3}
+ .v3-nanabot-art .research-art{min-height:410px}
+ .v3-experience-row{grid-template-columns:1fr;gap:12px;padding:32px 0}
+ .v3-header-flex{display:block}
+ .v3-header-flex>p{max-width:650px;margin-top:18px}
+ .v3-leader-grid,.project-grid{grid-template-columns:1fr;gap:38px}
+ .v3-project-card .project-image{height:340px}
+ .v3-beyond-photo img{height:auto;aspect-ratio:3/4}
+}
+@media(max-width:580px){
+ .container{width:calc(100% - 36px)}
+ .nav-v3 .nav-inner{width:calc(100% - 32px)}
+ .nav-v3 .v3-nav-socials>a{min-width:40px;min-height:40px;padding:6px}
+ .nav-v3 .brand{font-size:27px}
+ .v3-main .section{padding:74px 0 85px}
+ .v3-section-head h2{font-size:clamp(38px,10vw,55px);line-height:1.11}
+ .v3-hero{padding-top:30px}
+ .v3-hero h1{font-size:clamp(42px,10vw,55px);line-height:1.08;letter-spacing:-.064em}
+ .v3-hero .hero-deck{font-size:16.5px;line-height:1.7}
+ .v3-hero .hero-actions{gap:17px}
+ .v3-hero .hero-photo-frame{max-width:100%;aspect-ratio:39/50}
+ .hero-bottom{display:none}
+ .button-primary{padding:15px 17px;gap:16px}
+ .v3-story .origin-quote{font-size:clamp(40px,10vw,52px)}
+ .v3-story-visual{height:190px}
+ .v3-impact-feature-copy h3{font-size:clamp(34px,9vw,46px)}
+ .v3-impact-main-photo img{height:auto;aspect-ratio:4/3}
+ .v3-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .v3-gallery figure:last-child{grid-column:span 2;max-width:calc(50% - 6px);margin-inline:auto}
+ .v3-gallery img{height:auto;aspect-ratio:3/4;object-fit:cover}
+ .v3-gallery figcaption{font-size:12px}
+ .v3-impact-stories{margin-top:62px;gap:20px}
+ .v3-story-card,.v3-story-card-wide{display:flex;flex-direction:column}
+ .v3-story-card-photo{width:100%;height:auto;min-height:0;max-height:520px}
+ .v3-story-card-poster img{height:auto;max-height:520px;object-fit:contain}
+ .v3-story-card-copy,.v3-story-card-wide .v3-story-card-copy{padding:24px 20px 28px}
+ .v3-service-art{min-height:300px}
+ .v3-service-art>strong{font-size:36px}
+ .v3-education-stats{display:grid;grid-template-columns:1fr 1.25fr;gap:12px}
+ .v3-education-stats strong{font-size:clamp(30px,7vw,43px)}
+ .v3-education-panel{padding:24px 20px}
+ .v3-project-card .project-image{height:250px}
+ .v3-project-card .project-details>p{min-height:0}
+ .v3-project-extra{max-height:0!important;opacity:0!important}
+ .v3-project-card.v3-expanded .v3-project-extra{max-height:750px!important;opacity:1!important}
+ .v3-leader-card{padding:26px 22px}
+ .v3-experience-row h3{font-size:clamp(26px,8vw,37px)}
+ .v3-wide-photo img{height:auto;max-height:none}
+ .v3-beyond-photo img{height:auto;aspect-ratio:3/4}
+ .v3-book-cover{min-height:320px;padding:30px 24px}
+ .v3-book-cover>span,.v3-book-cover>em{font-size:clamp(47px,13vw,69px)}
+ .v3-contact-actions{flex-direction:column;align-items:stretch}
+ .v3-contact-actions>a{justify-content:space-between}
+ .v3-contact-social{flex-direction:column;gap:14px;align-items:flex-start}
+ .v3-story-detail-photo img{aspect-ratio:3/4}
+ .project-grid{gap:38px}
+ .case-gallery{grid-template-columns:1fr}
+}
+@media(hover:none){
+ .v3-project-card .v3-project-extra{max-height:0;opacity:0}
+ .v3-project-card.v3-expanded .v3-project-extra{max-height:750px;opacity:1}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+ .reveal{opacity:1!important;transform:none!important}
+}

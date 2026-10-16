@@ -1,0 +1,1 @@
+export default function ChapterHeading({number,kicker,title,desc}:{number:string;kicker:string;title:string;desc?:string}){return <div className="chapter-heading"><div className="eyebrow copper">{number} / {kicker}</div><h2>{title}</h2>{desc&&<p>{desc}</p>}</div>}

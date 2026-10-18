@@ -7,7 +7,7 @@ export default function ProjectCard({project,feature=false}:{project:Project;fea
  const detailId=`details-${project.slug}`;
  return <article className={`project-card v3-project-card ${feature?"project-card-feature":""} ${expanded?"v3-expanded":""}`} style={{"--project-accent":project.accent} as React.CSSProperties}>
   <Link href={`/work/${project.slug}`} className="project-image" aria-label={`Read ${project.title} case study`}>
-   {project.image?<img src={project.image} alt={project.imageAlt||project.title} loading="lazy"/>:<div className="project-fallback"><div className="fallback-grid"/><span>W0</span><span>W1</span><span>W2</span><span>W3</span><small>FIFO / DISPATCH</small></div>}
+   {project.image?<img src={project.image} alt={project.imageAlt||project.title} loading="lazy"/>:<div className="project-fallback"><div className="fallback-grid"/><small>PROJECT IMAGE</small></div>}
    <span className="v3-project-image-hint">VIEW PROJECT ↗</span>
   </Link>
   <div className="project-details">

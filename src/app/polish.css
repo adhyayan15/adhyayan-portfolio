@@ -181,3 +181,9 @@ a,button{-webkit-tap-highlight-color:transparent}
  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
  .reveal{opacity:1!important;transform:none!important}
 }
+
+/* Preserve both robot prototypes and the award trophy on desktop and phones. */
+.v3-project-card:has(a[href="/work/f1-autonomous-robot"]) .project-image>img {object-fit:contain;object-position:center center;padding:16px;background:#191d1e;}
+.case-hero-media:has(img[src="/images/f1-first-place.webp"]) {height:auto;min-height:0;padding-top:16px;padding-bottom:16px;}
+.case-hero-media>img[src="/images/f1-first-place.webp"] {position:static;width:min(100%,850px);height:auto;max-height:630px;object-fit:contain;object-position:center;display:block;margin:0 auto;}
+@media(max-width:580px){.v3-project-card:has(a[href="/work/f1-autonomous-robot"]) .project-image{height:290px}.v3-project-card:has(a[href="/work/f1-autonomous-robot"]) .project-image>img{padding:8px}.case-hero-media>img[src="/images/f1-first-place.webp"]{height:auto;width:100%;max-height:unset}}

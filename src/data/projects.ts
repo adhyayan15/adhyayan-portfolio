@@ -15,7 +15,8 @@ export type Project = {
   accent: string;
   image?: string;
   imageAlt?: string;
-  github: string;
+  github?: string;
+  imageCredit?: string;
   lessons: string[];
   gallery?: {src:string;caption:string}[];
   metrics: { label: string; value: string }[];
@@ -49,16 +50,16 @@ export const projects: Project[] = [
     metrics: [{label:"PCB",value:"2 layers"},{label:"DIMENSIONS",value:"4 × 4 in"},{label:"MCU",value:"STM32F407"}]
   },
   {
-    slug: "four-worker-task-scheduler", index: "03", title: "Four-Worker Scheduler", subtitle: "Parallelism, one clock at a time.", category: "DIGITAL DESIGN / VERILOG", year: "2026", tools: ["Verilog", "Icarus Verilog", "GTKWave", "Python", "RTL Testing"],
-    summary: "A busy-aware four-worker RTL task scheduler with round-robin dispatch, backpressure, and a four-entry FIFO.",
-    question: "When every worker is busy, where does new work go, and how can I prove no task disappears?",
-    approach: "I built four 8-bit addition workers, added busy-aware scheduling, a four-entry queue, ready/valid handshakes, testbenches, and an interactive Python simulation runner.",
-    result: "The integration testbench accepted, dispatched and completed all 20 test tasks, exercising worker overlap, queue ordering, and backpressure behavior.",
-    limitation: "This is RTL simulation, not synthesized or implemented on an FPGA. The workers model a five-cycle busy interval and are not pipelined arithmetic units.",
-    next: "Add more operation types, broader randomized tests, and synthesis to understand timing and area tradeoffs.",
-    accent: "#b7a9ba", github: "https://github.com/adhyayan15/four-worker-task-scheduler",
-    lessons: ["Parallel workers still need explicit scheduling and acceptance logic.","A FIFO prevents work from disappearing when execution resources are occupied.","The testbench is as important as the scheduler architecture."],
-    metrics: [{label:"WORKERS",value:"04"},{label:"FIFO DEPTH",value:"04"},{label:"TASKS VERIFIED",value:"20 / 20"}]
+    slug: "f1-autonomous-robot", index: "03", title: "F1 Autonomous Robot", subtitle: "Our first robot. Our first-place finish.", category: "ROBOTICS / AUTONOMOUS CONTROL", year: "2026", tools: ["Arduino", "Ultrasonic Sensing", "H-Bridge Motor Driver", "Robot Testing", "3D-Printed Parts"],
+    summary: "An F1-inspired autonomous object-following robot built with my engineering team. We finished first among 15 teams at USF's Foundations of Engineering competition.",
+    question: "Could we make a small F1-inspired robot respond to its surroundings and follow an object without someone steering it manually?",
+    approach: "Our team built an Arduino-based robot using an ultrasonic sensor to detect an object and an H-bridge driver to control its motors. I served as Test Lead, working on testing and improving the robot's behavior before the competition.",
+    result: "Our team earned 1st place out of 15 teams in the Spring 2026 Foundations of Engineering F1 robot challenge at USF. The photo shows our robot prototypes and first-place trophy.",
+    limitation: "This was a team-built classroom robot, not an autonomous racing vehicle. Its autonomy was object-following; the competition result is not a measurement of navigation reliability or real-world autonomy.",
+    next: "Revisit the design with logged sensor data, more systematic performance tests, and improved motor control to make its responses more repeatable.",
+    accent: "#c3a47e", image: "/images/f1-first-place.webp", imageAlt: "First-place trophy behind two white F1-inspired 3D-printed robot prototypes at USF", imageCredit: "Photo from the USF Foundations of Engineering F1 robot competition",
+    lessons: ["A successful robot needs more than working code: mechanical design, sensing, motor control, and testing have to work together.","Testing different situations is how you find out where a robot actually struggles.","The first-place result was a team achievement, and my contribution focused on testing and refinement."],
+    metrics: [{label:"COMPETITION FINISH",value:"1st place"},{label:"TEAMS",value:"15"},{label:"MY ROLE",value:"Test Lead"}]
   },
   {
     slug: "bcd-decade-counter", index: "04", title: "BCD Decade Counter", subtitle: "From jumper wires to copper traces.", category: "DIGITAL ELECTRONICS / PCB", year: "2026", tools: ["KiCad", "NE555", "74LS90", "CD4511", "7-Segment Display"],

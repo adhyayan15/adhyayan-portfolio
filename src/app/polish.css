@@ -183,7 +183,12 @@ a,button{-webkit-tap-highlight-color:transparent}
 }
 
 /* Preserve both robot prototypes and the award trophy on desktop and phones. */
-.v3-project-card:has(a[href="/work/f1-autonomous-robot"]) .project-image>img {object-fit:contain;object-position:center center;padding:16px;background:#191d1e;}
-.case-hero-media:has(img[src="/images/f1-first-place.webp"]) {height:auto;min-height:0;padding-top:16px;padding-bottom:16px;}
-.case-hero-media>img[src="/images/f1-first-place.webp"] {position:static;width:min(100%,850px);height:auto;max-height:630px;object-fit:contain;object-position:center;display:block;margin:0 auto;}
-@media(max-width:580px){.v3-project-card:has(a[href="/work/f1-autonomous-robot"]) .project-image{height:290px}.v3-project-card:has(a[href="/work/f1-autonomous-robot"]) .project-image>img{padding:8px}.case-hero-media>img[src="/images/f1-first-place.webp"]{height:auto;width:100%;max-height:unset}}
+.v3-project-card:has(a[href="/work/object-following-robot"]) .project-image>img {object-fit:contain;object-position:center center;padding:16px;background:#191d1e;}
+.case-hero-media:has(img[src="/images/robot-challenge-first-place.webp"]) {height:auto;min-height:0;padding-top:16px;padding-bottom:16px;}
+.case-hero-media>img[src="/images/robot-challenge-first-place.webp"] {position:static;width:min(100%,850px);height:auto;max-height:630px;object-fit:contain;object-position:center;display:block;margin:0 auto;}
+@media(max-width:580px){.v3-project-card:has(a[href="/work/object-following-robot"]) .project-image{height:290px}.v3-project-card:has(a[href="/work/object-following-robot"]) .project-image>img{padding:8px}.case-hero-media>img[src="/images/robot-challenge-first-place.webp"]{height:auto;width:100%;max-height:unset}}
+
+/* Authentic campus portrait: squarely framed on desktop and phones without cutting off the face or gesture. */
+.v3-hero .hero-photo-frame{background:#1b2926}
+.v3-hero .hero-photo{object-position:50% 50%;filter:saturate(1.03) contrast(1.01)}
+@media(max-width:760px){.v3-hero .hero-photo{object-position:50% 48%}}

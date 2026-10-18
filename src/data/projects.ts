@@ -50,15 +50,15 @@ export const projects: Project[] = [
     metrics: [{label:"PCB",value:"2 layers"},{label:"DIMENSIONS",value:"4 × 4 in"},{label:"MCU",value:"STM32F407"}]
   },
   {
-    slug: "f1-autonomous-robot", index: "03", title: "F1 Autonomous Robot", subtitle: "Our first robot. Our first-place finish.", category: "ROBOTICS / AUTONOMOUS CONTROL", year: "2026", tools: ["Arduino", "Ultrasonic Sensing", "H-Bridge Motor Driver", "Robot Testing", "3D-Printed Parts"],
-    summary: "An F1-inspired autonomous object-following robot built with my engineering team. We finished first among 15 teams at USF's Foundations of Engineering competition.",
-    question: "Could we make a small F1-inspired robot respond to its surroundings and follow an object without someone steering it manually?",
-    approach: "Our team built an Arduino-based robot using an ultrasonic sensor to detect an object and an H-bridge driver to control its motors. I served as Test Lead, working on testing and improving the robot's behavior before the competition.",
-    result: "Our team earned 1st place out of 15 teams in the Spring 2026 Foundations of Engineering F1 robot challenge at USF. The photo shows our robot prototypes and first-place trophy.",
-    limitation: "This was a team-built classroom robot, not an autonomous racing vehicle. Its autonomy was object-following; the competition result is not a measurement of navigation reliability or real-world autonomy.",
-    next: "Revisit the design with logged sensor data, more systematic performance tests, and improved motor control to make its responses more repeatable.",
-    accent: "#c3a47e", image: "/images/f1-first-place.webp", imageAlt: "First-place trophy behind two white F1-inspired 3D-printed robot prototypes at USF", imageCredit: "Photo from the USF Foundations of Engineering F1 robot competition",
-    lessons: ["A successful robot needs more than working code: mechanical design, sensing, motor control, and testing have to work together.","Testing different situations is how you find out where a robot actually struggles.","The first-place result was a team achievement, and my contribution focused on testing and refinement."],
+    slug: "object-following-robot", index: "03", title: "Object-Following Robot", subtitle: "A robot designed for kids. A first-place team finish.", category: "ROBOTICS / HANDS-ON DESIGN", year: "2026", tools: ["Arduino", "Ultrasonic Sensor", "H-Bridge Motor Driver", "Circuit Design", "Robot Testing", "Technical Documentation"],
+    summary: "For USF's Foundations of Engineering Robot Challenge, our team built a playful object-following robot with middle-school students in mind. We earned first place among 15 teams.",
+    question: "With the freedom to build different kinds of robots, how could we design something fun for middle-school children that could detect and follow an object?",
+    approach: "Our team designed and built an Arduino-controlled robot using ultrasonic sensing and an H-bridge motor driver. I served as Test Lead, but also contributed to the robot's design, circuit work and troubleshooting, iteration, the final presentation, and detailed technical documentation.",
+    result: "Our team earned 1st place out of 15 teams in the Spring 2026 Foundations of Engineering Robot Challenge at USF. The photograph shows our prototypes and first-place trophy.",
+    limitation: "This was a team-built, object-following prototype intended to be engaging for a middle-school audience, not a racing vehicle or a production robot. We are not claiming formal testing with children or independently validated autonomy beyond the project.",
+    next: "Refine the robot's response to changing distances, document more repeatable tests, and get feedback from middle-school students on what makes the interaction enjoyable.",
+    accent: "#c3a47e", image: "/images/robot-challenge-first-place.webp", imageAlt: "First-place trophy behind two white 3D-printed object-following robot prototypes", imageCredit: "USF Foundations of Engineering Robot Challenge",
+    lessons: ["Designing for middle-school children meant thinking about whether the robot would be fun and approachable, not just whether it worked.","As Test Lead, I learned how much mechanical design, circuit integration, troubleshooting, and repeated testing depend on one another.","Clear presentation and technical documentation matter: they explain the design decisions and give the team a way to communicate what we built."],
     metrics: [{label:"COMPETITION FINISH",value:"1st place"},{label:"TEAMS",value:"15"},{label:"MY ROLE",value:"Test Lead"}]
   },
   {

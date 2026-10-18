@@ -92,7 +92,7 @@ export const skillGroups = [
 export const honors = [
   {name:'4.0 cumulative GPA',issuer:'University of South Florida · Including transfer coursework',year:'2025–2026'},
   {name:'Dean’s List · Two semesters',issuer:'University of South Florida',year:'Fall 2025 / Spring 2026'},
-  {name:'First place · Object-following F1 robot',issuer:'USF Foundations of Engineering · 15 teams',year:'Spring 2026'},
+  {name:'First place · Foundations of Engineering Robot Challenge',issuer:'USF Foundations of Engineering · 15 teams',year:'Spring 2026'},
   {name:'Best Project recognition · AIYA',issuer:'National University of Singapore · 2 of 50 participants',year:'2024'},
   {name:'Second place · Central India regionals',issuer:'World Robot Olympiad',year:'Earlier achievement'},
   {name:'Best Aim & Utility / Best Knowledge & Content',issuer:'Baal Vigyan science recognitions',year:'Earlier achievements'},

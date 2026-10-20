@@ -192,3 +192,15 @@ a,button{-webkit-tap-highlight-color:transparent}
 .v3-hero .hero-photo-frame{background:#1b2926}
 .v3-hero .hero-photo{object-position:50% 50%;filter:saturate(1.03) contrast(1.01)}
 @media(max-width:760px){.v3-hero .hero-photo{object-position:50% 48%}}
+
+/* NanaBot: show actual photographs from the linked XiaoZhi-ESP32 repository, never a generated product mockup. */
+.nanabot-real-hardware{margin:0;min-width:0}
+.nanabot-hardware-frame.research-art{min-height:430px;padding:32px;background:#171d1d}
+.nanabot-hardware-frame img{display:block;width:100%;height:auto;max-height:390px;object-fit:contain;object-position:center;filter:saturate(.96)}
+.nanabot-real-hardware figcaption{margin-top:13px;font:12px/1.6 'IBM Plex Mono',monospace;color:#b9c7c1;letter-spacing:.025em}
+.nanabot-real-hardware figcaption a,.nanabot-hardware-detail figcaption a{color:var(--copper);text-decoration:underline;text-underline-offset:4px}
+.nanabot-real-hardware figcaption small{display:block;font-size:13px;line-height:1.55;color:#aab7b1;margin-top:7px;letter-spacing:normal}
+.nanabot-hardware-detail{margin:34px 0 44px;display:block;max-width:650px;padding:20px;border:1px solid var(--edge);background:#161c1d}
+.nanabot-hardware-detail img{display:block;width:100%;height:auto;max-height:460px;object-fit:contain}
+.nanabot-hardware-detail figcaption{font-size:13px;line-height:1.65;color:#b3c0ba;margin-top:12px}
+@media(max-width:760px){.nanabot-hardware-frame.research-art{min-height:0;padding:16px}.nanabot-hardware-frame img{max-height:340px}.nanabot-real-hardware figcaption{font-size:12px}.nanabot-hardware-detail{padding:12px}}

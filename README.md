@@ -6,12 +6,30 @@ A dark, editorial, mobile-responsive engineering portfolio built with Next.js, R
 
 Requires Node.js 20.9+ (Node 22 recommended).
 
+Run these commands from the repository root:
+
 ```bash
 npm install
 npm run dev
-# open http://localhost:3000
-npm run build
 ```
+
+Open http://localhost:3000. The development server stays running in that terminal; stop it with Ctrl+C before switching to a production preview.
+
+### Check and preview a production build
+
+```bash
+npm run lint
+npm run build
+npm start
+```
+
+Run each command after the previous one succeeds, then open http://localhost:3000 to inspect the built site.
+
+- `npm run lint` runs `tsc --noEmit`: it checks TypeScript types without emitting JavaScript. Despite the script name, it does not run ESLint.
+- `npm run build` runs `next build` to create the production build.
+- `npm start` runs `next start` to serve that build locally. Rebuild after edits before checking them in this preview.
+
+The [Build verification workflow](.github/workflows/build.yml) uses Node.js 22, installs dependencies, and runs `npm run build` on pushes to `main` and on pull requests. It does not run the separate `lint` script.
 
 ## Organization
 

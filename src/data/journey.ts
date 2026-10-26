@@ -37,8 +37,8 @@ export const experiences: Experience[] = [
     organization: 'Society of Asian Scientists and Engineers · USF', role: 'Vice President, External Affairs',
     period: 'Apr 2026 — Present', category: 'Leadership',
     summary: 'Coordinate student teams across technical projects, industry outreach, public relations, and service, with an emphasis on practical opportunities for members.',
-    highlights: ['Helped recruit and coordinate a 20+ member leadership team.', 'Oversee work across projects, external engagement, public relations, and service.', 'Hosted a PCB design workshop attended by 59 students, emphasizing individual questions and a complete full-adder PCB workflow.'],
-    technologies: ['Projects Leadership', 'PCB Workshops', 'Industry Partnerships'],
+    highlights: ['Helped recruit and coordinate a 20+ member leadership team.', 'Oversee work across projects, external engagement, public relations, and service.', 'Hosted a PCB design workshop attended by 59 students; stepped in on short notice for an OpenCV workshop when its scheduled presenter became ill.'],
+    technologies: ['Projects Leadership', 'PCB Workshops', 'OpenCV', 'Industry Partnerships'],
   },
   {
     organization: 'USF College of Engineering', role: 'Student Ambassador',

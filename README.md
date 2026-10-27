@@ -60,4 +60,14 @@ Connect this GitHub repository to Vercel and deploy as a Next.js app from the re
 
 ## Assets and privacy
 
-The photographs are personal images provided by the portfolio owner; please do not reuse them without permission. The résumé button points to the owner's Google Doc configured for public view-only access. The current document is intentionally blank until the owner adds the finished résumé.
+The photographs are personal images provided by the portfolio owner; please do not reuse them without permission.
+
+### Keeping résumé and contact links current
+
+The résumé is linked as an external Google Doc. Its contents and sharing permissions are managed in Google Drive, not in this repository.
+
+- If the résumé document URL changes, update both the `RESUME` constant in [src/app/page.tsx](src/app/page.tsx) and the résumé anchor in [src/app/contact/page.tsx](src/app/contact/page.tsx).
+- Email and social links are also repeated on the homepage and contact page. The navigation's GitHub and LinkedIn URLs live in the `socials` array in [src/components/Navbar.tsx](src/components/Navbar.tsx).
+- After updating links, open both résumé buttons in a signed-out or private browser window. Confirm that visitors can read the intended document without requesting access and cannot edit it. Check the email and social links on both pages as well.
+
+A successful site build does not verify the external document's contents or access permissions.

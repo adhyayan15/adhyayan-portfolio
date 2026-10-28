@@ -31,6 +31,16 @@ Run each command after the previous one succeeds, then open http://localhost:300
 
 The [Build verification workflow](.github/workflows/build.yml) uses Node.js 22, installs dependencies, and runs `npm run build` on pushes to `main` and on pull requests. It does not run the separate `lint` script.
 
+### Keyboard and motion checks
+
+After changing navigation, layout, or animation styles, check these behaviors in the local preview:
+
+- Reload a page and press Tab to reveal **Skip to content**. Activate it and confirm it reaches the page's main content. The link in `src/app/layout.tsx` targets `#main`, so new pages need to preserve that target.
+- At a narrow viewport, use the keyboard to open the **Menu** button. Confirm its label changes to **Close menu**, Escape closes it, and selecting a section link closes it and reaches the matching homepage section. These behaviors are implemented in `src/components/Navbar.tsx`.
+- Enable reduced motion in your operating system or browser's rendering tools, then reload. Confirm that sections remain visible without waiting for a scroll reveal. `src/components/Reveal.tsx` checks the preference on mount, and the reduced-motion rules in `src/app/polish.css` make reveal content visible and shorten animations.
+
+These are manual regression checks, not a claim that the site has passed a full accessibility audit.
+
 ## Organization
 
 - `src/app/page.tsx` — homepage; Story → Impact → Education → Projects → Experience → Leadership → Beyond Engineering → Book → Contact

@@ -64,6 +64,14 @@ Edit the `projects` array in [src/data/projects.ts](src/data/projects.ts), using
 
 After an edit, run the checks above and preview the homepage, `/work`, and the affected `/work/<slug>` page. Check the card's **More detail** button, images, source link, and any redirect affected by a renamed slug.
 
+## Updating experience and education
+
+Edit roles, skills, and awards in [src/data/journey.ts](src/data/journey.ts). Check both the homepage and [the full experience page](src/app/experience/page.tsx) after making changes:
+
+- The homepage puts entries with `category: 'Leadership'` in its Leadership section and shows only the first three highlights per role. The full `/experience` page shows every highlight and follows the order of the `experiences` array.
+- Homepage experience ordering is defined separately by `showExperiences` in `src/app/page.tsx`; changing the array order alone may not produce the same order on both pages.
+- Degree, graduation date, GPA, and coursework text are written directly in both `src/app/page.tsx` and `src/app/experience/page.tsx`. Update both when those details change, and keep any repeated GPA or award details in `honors` consistent.
+
 ## Deployment
 
 Connect this GitHub repository to Vercel and deploy as a Next.js app from the repository root. New pushes to `main` trigger deployments when the Git integration is enabled. No environment variables are required.

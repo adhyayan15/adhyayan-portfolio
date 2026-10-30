@@ -50,7 +50,12 @@ These are manual regression checks, not a claim that the site has passed a full 
 - `src/app/globals.css` — foundation styles; `src/app/polish.css` — responsive and legibility improvements
 - `public/images` — the owner's approved photography and SASE event images
 
-The interactive project demos are browser illustrations and previously documented measurements, **not** live FPGA or TensorRT execution. Hardware designs are explicitly distinguished from physically tested builds.
+The two interactive demos are implemented in browser components:
+
+- [CounterDemo.tsx](src/components/CounterDemo.tsx), shown on `/work/bcd-decade-counter`, advances a React state value from 0 through 9 and wraps back to 0. **Reset** returns it to 0; the BCD text and seven-segment display reflect that value. It illustrates the output sequence rather than simulating circuit voltages or timing.
+- [InferenceCompare.tsx](src/components/InferenceCompare.tsx), shown on `/work/reflex-vision`, displays saved benchmark values and toggles methodology text. It does not run inference or load benchmark CSVs. When updating measurements, keep its numeric constants, displayed latency labels, percentage, and methodology text consistent with the project entry in `src/data/projects.ts`.
+
+Hardware designs are explicitly distinguished from physically tested builds.
 
 ## Adding or updating a project
 

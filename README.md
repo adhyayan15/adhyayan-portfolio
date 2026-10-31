@@ -4,14 +4,18 @@ A dark, editorial, mobile-responsive engineering portfolio built with Next.js, R
 
 ## Run locally
 
-Requires Node.js 20.9+ (Node 22 recommended).
+Requires Git and Node.js 20.9+ (Node 22 recommended), with npm available.
 
-Run these commands from the repository root:
+For a fresh checkout:
 
 ```bash
+git clone https://github.com/adhyayan15/adhyayan-portfolio.git
+cd adhyayan-portfolio
 npm install
 npm run dev
 ```
+
+If you already have a checkout, open its repository root (the folder containing `package.json`) and run `npm install` and `npm run dev` there; skip the clone step.
 
 Open http://localhost:3000. The development server stays running in that terminal; stop it with Ctrl+C before switching to a production preview.
 

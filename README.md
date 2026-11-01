@@ -81,6 +81,12 @@ Edit roles, skills, and awards in [src/data/journey.ts](src/data/journey.ts). Ch
 - Homepage experience ordering is defined separately by `showExperiences` in `src/app/page.tsx`; changing the array order alone may not produce the same order on both pages.
 - Degree, graduation date, GPA, and coursework text are written directly in both `src/app/page.tsx` and `src/app/experience/page.tsx`. Update both when those details change, and keep any repeated GPA or award details in `honors` consistent.
 
+### Updating page titles and sharing text
+
+The site-wide title, description, and Open Graph sharing text are defined separately from visible page content in [src/app/layout.tsx](src/app/layout.tsx). When updating the portfolio introduction, review both the regular `description` and `openGraph.description`; changing homepage text alone does not update these fields. The sharing image is configured as `/images/campus-bulls.webp`, backed by `public/images/campus-bulls.webp`.
+
+Case-study titles and descriptions come from each project's `title` and `summary` through `generateMetadata` in [the case-study route](src/app/work/[slug]/page.tsx). Its metadata function does not set project-specific Open Graph fields. After metadata edits, check the rendered page title and description as well as the sharing preview.
+
 ## Deployment
 
 Connect this GitHub repository to Vercel and deploy as a Next.js app from the repository root. New pushes to `main` trigger deployments when the Git integration is enabled. No environment variables are required.

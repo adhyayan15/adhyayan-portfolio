@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -10,4 +11,4 @@ export const metadata: Metadata = {
  openGraph:{title:"Adhyayan Tiwari — Engineer, Builder, Researcher",description:"From imagining robots to engineering them.",type:"website",images:["/images/campus-bulls.webp"]},
  robots:{index:true,follow:true},
 };
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body id="top"><a className="skip-link" href="#main">Skip to content</a><Navbar/>{children}<Footer/></body></html>}
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body id="top"><a className="skip-link" href="#main">Skip to content</a><Navbar/>{children}<Footer/><Analytics/></body></html>}

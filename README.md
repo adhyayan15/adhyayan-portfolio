@@ -61,6 +61,12 @@ The two interactive demos are implemented in browser components:
 
 Hardware designs are explicitly distinguished from physically tested builds.
 
+## Updating navigation links
+
+The `sections` array in [src/components/Navbar.tsx](src/components/Navbar.tsx) defines the navigation labels and homepage anchor IDs. Each link uses `/#<id>`, including when opened from a case study or another page; **Story** goes to `/#story`, not the separate `/story` page.
+
+When renaming or adding a navigation entry, keep its `id` aligned with the corresponding section in [src/app/page.tsx](src/app/page.tsx). Changing only the label leaves the destination unchanged. After editing, follow the link from both the homepage and a `/work/<slug>` page and confirm it reaches the intended section.
+
 ## Adding or updating a project
 
 Edit the `projects` array in [src/data/projects.ts](src/data/projects.ts), using its `Project` type and existing entries as the field checklist. The homepage and `/work` listing both render this array; [the case-study route](src/app/work/[slug]/page.tsx) uses the same entries for page content, metadata, and generated route parameters.

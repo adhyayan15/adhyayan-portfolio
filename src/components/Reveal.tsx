@@ -6,7 +6,7 @@ export default function Reveal({ children, className = "", delay = 0 }: { childr
  useEffect(() => {
    const element = ref.current;
    if (!element) return;
-   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { setVisible(true);return; }
+   if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) { setVisible(true);return; }
    const observer = new IntersectionObserver(([e])=>{if(e.isIntersecting){setVisible(true);observer.disconnect();}}, {threshold:0.1,rootMargin:"0px 0px -24px 0px"});
    observer.observe(element); return ()=>observer.disconnect();
  }, []);

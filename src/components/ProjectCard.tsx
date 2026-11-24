@@ -20,7 +20,7 @@ export default function ProjectCard({project,feature=false}:{project:Project;fea
      <div className="v3-extra-line"><span>WHAT I LEARNED</span><p>{project.lessons[0]}</p></div>
    </div>
    <div className="tags">{project.tools.slice(0,4).map(t=><span key={t}>{t}</span>)}</div>
-   <div className="v3-card-actions"><button type="button" className="v3-expand-button" onClick={()=>setExpanded(x=>!x)} aria-expanded={expanded} aria-controls={detailId}>{expanded?"LESS DETAIL −":"MORE DETAIL +"}</button><Link className="inline-link" href={`/work/${project.slug}`}>CASE STUDY ↗</Link></div>
+   <div className="v3-card-actions"><button type="button" className="v3-expand-button" onClick={()=>setExpanded(x=>!x)} aria-label={`${expanded?"Less detail":"More detail"}: ${project.title}`} aria-expanded={expanded} aria-controls={detailId}>{expanded?"LESS DETAIL −":"MORE DETAIL +"}</button><Link className="inline-link" href={`/work/${project.slug}`} aria-label={`Case study: ${project.title}`}>CASE STUDY ↗</Link></div>
   </div>
  </article>;
 }

@@ -10,4 +10,4 @@ export const metadata: Metadata = {
  openGraph:{title:"Adhyayan Tiwari — Engineer, Builder, Researcher",description:"From imagining robots to engineering them.",type:"website",images:["/images/campus-bulls.webp"]},
  robots:{index:true,follow:true},
 };
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body id="top"><a className="skip-link" href="#main">Skip to content</a><Navbar/>{children}<Footer/></body></html>}
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body id="top"><noscript><style>{`.reveal{opacity:1!important;transform:none!important}`}</style></noscript><a className="skip-link" href="#main">Skip to content</a><Navbar/>{children}<Footer/></body></html>}

@@ -91,7 +91,7 @@ Edit roles, skills, and awards in [src/data/journey.ts](src/data/journey.ts). Ch
 
 The site-wide title, description, and Open Graph sharing text are defined separately from visible page content in [src/app/layout.tsx](src/app/layout.tsx). When updating the portfolio introduction, review both the regular `description` and `openGraph.description`; changing homepage text alone does not update these fields. The sharing image is configured as `/images/campus-bulls.webp`, backed by `public/images/campus-bulls.webp`.
 
-Case-study titles and descriptions come from each project's `title` and `summary` through `generateMetadata` in [the case-study route](src/app/work/[slug]/page.tsx). Its metadata function does not set project-specific Open Graph fields. After metadata edits, check the rendered page title and description as well as the sharing preview.
+Case-study titles and descriptions come from each project's `title` and `summary` through `generateMetadata` in [the case-study route](src/app/work/[slug]/page.tsx). The same function sets project-specific Open Graph titles, descriptions, and the project's main image (with its alt text) when available. After metadata edits, check the rendered page title and description as well as the sharing preview.
 
 ## Deployment
 
